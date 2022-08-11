@@ -10,9 +10,8 @@ interface IERC20 {
 
     function totalSupply() external view returns (unit);
 
-    // balanceOF functions Returns the total amount of tokens in existence. 
+    // Returns the amount of all tokens
     // This function is a getter and does not modify the state of the contract.
-    // Keep in mind that there are no floats in Solidity. 
     // Therefore most tokens adopt 18 decimals and will return the total supply and other results as followed 1000000000000000000 for 1 token. 
     // Not every token has 18 decimals and this is something you really need to watch for when dealing with tokens.
 
@@ -54,13 +53,16 @@ interface IERC20 {
     ) external returns (bool);
     
 
-    // Transfer tokens from one address to another on behalf of the owner address.
+    // TransferFrom() is intended to transfer tokens from one address to another on behalf of the owner address.
     // This function is similar to transfer but it is used by the spender to transfer on behalf of the owner.
     // This function is used by the spender to transfer tokens from the function caller's account to another account on behalf of the owner.
     // Moves the amount of tokens from sender to recipient using the allowance mechanism. 
     // amount is then deducted from the caller’s allowance. This function emits the Transfer event
-
+    
+    
+    ////////////
     // Events 
+    ///////////
     
     // Events in Solidity are the same as in any other programming language. 
     // An event is an inheritable member of the contract, which stores the arguments passed in the transaction logs when emitted. 
